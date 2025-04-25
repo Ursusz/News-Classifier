@@ -13,7 +13,7 @@ from utils.topWords import TopWordsCalculator
 from joblib import dump, load
 
 # df = pd.read_csv("dataset/fake_or_real_news.csv")
-df = pd.read_csv('dataset/DataSet.csv')
+df = pd.read_csv('../dataset/DataSet.csv')
 
 def clean_csv(dataframe):
     dataframe['class'] = df['label'].map({'FAKE': 0, 'REAL': 1})
@@ -40,9 +40,9 @@ punctuation_columns = punctuations_builder.add_punctuation_columns()
 # punct_extractor.generateTopPunct()
 
 top_words = get_top_words_list()
-dump(top_words, 'app/top_words.joblib')
+dump(top_words, '../app/nlps/top_words.joblib')
 
-vectorizer = CountVectorizer(vocabulary=top_words)
+vectorizer = CountVectorizer(vocabulary=top_words, ngram_range=(1, 3))
 
 df.fillna({'text': ''}, inplace=True)
 texts = df['text'].apply(lambda x: ' '.join(sent_tokenize(str(x))) if isinstance(x, str) else '')
@@ -60,7 +60,7 @@ x_title_df = pd.DataFrame(x_title.toarray(), columns=vectorizer.get_feature_name
 x = pd.concat([x, x_title_df], axis=1)
 y = df['class']
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=42)
 
 model = RandomForestClassifier(n_jobs=-1)
 model.fit(x_train, y_train)
@@ -71,4 +71,4 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Acuratete test : {100 * accuracy}")
 print(classification_report(y_test, y_pred, target_names=["FAKE", "REAL"]))
 
-dump(model, 'app/random_forest_model.joblib')
+dump(model, '../app/nlps/random_forest_model.joblib')

@@ -16,10 +16,11 @@
     <div class="form-container">
         <div class="form-wrapper">
             <label for="model"></label>
-            <select name="model" id="model" class="form-select">
-                <option value="rfc" selected>Random Forest Classiffier</option>
-            </select>
             <form action="/predict" method="POST" class="text-center input-form">
+                <select name="model" id="model" class="form-select">
+                    <option value="rfc" selected>Random Forest Classifier</option>
+                    <option value="brt">Bert Base Uncased Fine Tuned</option>
+                </select>
                 <div class="mb-3 input-text">
                     <input class="form-control form-control-lg" type="text" placeholder="Title" aria-label="Title" id="title" name="input_title">
                     <label for="title"></label>
@@ -30,5 +31,14 @@
             </form>
         </div>
     </div>
+
+    {% if prediction_result %}
+    <div class="alert alert-info mt-3 text-center" role="alert">
+        Prediction results : {{ prediction_result }}
+        {% if used_model %}
+        (Model: {{ used_model }})
+        {% endif %}
+    </div>
+    {% endif %}
 </body>
 </html>
