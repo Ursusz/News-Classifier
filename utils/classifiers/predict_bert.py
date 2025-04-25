@@ -44,7 +44,7 @@ def predict_bert(text, title, model=model, tokenizer=tokenizer, max_len=MAX_LEN,
             predicted_class_index = torch.argmax(logits, dim=1).item()
             predicted_label = label_mapping[predicted_class_index]
 
-        print(f"Bert: {predicted_label}")
+        # print(f"Bert: {predicted_label}")
         return predicted_label
     except Exception as e:
         print(f"Error in predict_bert: {e}")

@@ -1,7 +1,7 @@
-.main-text{
+.main-text {
   margin-top: 100px;
   margin-bottom: 150px;
-  color:white;
+  color: white;
 }
 
 nav {
@@ -9,12 +9,14 @@ nav {
   height: 60px;
   border: 1px solid gray;
   border-radius: 8px;
+
   & > * {
     margin-left: 50px;
     background-color: #333333;
     border-radius: 25px;
     border: 2px solid white;
   }
+
   a.navbar-brand {
     display: flex;
     align-items: center;
@@ -23,56 +25,91 @@ nav {
     color: ghostwhite;
     font-size: 15px;
     transition: all ease-in-out 0.4s;
-    &:hover{
+
+    &:hover {
       color: lightsteelblue;
     }
-
   }
-}
+} //nav
 
 .form-container {
   margin-top: 0;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  .form-wrapper{
+
+  .form-wrapper {
+    width: 80%;
+    height: 300px;
     border: 2px solid darkslateblue;
     border-radius: 20px;
     box-shadow: 4px 6px 10px rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    select{
-      width: 80%;
-      margin: 0 auto;
-      background-color: darkslateblue;
-      option{
-        background-color: darkslateblue;
-      }
-    }
     .input-form {
-      min-width: 1200px;
-      padding: 20px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
 
-      .form-select{
+      button{
+        position: absolute;
+        bottom: 20px;
+      }
+
+      .content-input {
+        width: 100%;
         margin-bottom: 20px;
-      }
-      .input-text{
-        width: 80%;
-        input{
-          background-color: lightslategrey;
-          color: darkblue;
-          border-color: indigo;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .radio-boxes-container {
+          display: flex;
+          flex-direction: column;
+          max-width: 150px;
+          overflow: auto;
+          justify-content: center;
+          width: 300px;
+
+          .radio-box {
+            margin: 10px;
+          }
         }
-      }
-    }
-    .sbm-bttn{
-      border-color: ivory;
-    }
-  }
-}
+
+        .inputs-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+
+          &>*{
+            width: 90%;
+          }
+
+          .form-select {
+            margin-bottom: 20px;
+            background-color: darkslateblue;
+
+            option {
+              background-color: darkslateblue;
+            }
+          } //.form-select
+
+          input {
+            background-color: lightslategrey;
+            color: darkblue;
+            border-color: indigo;
+          } //input
+        } //.inputs-container
+      } //.content-input
+    } //.form-input
+  } //.form-wrapper
+} //.form-container

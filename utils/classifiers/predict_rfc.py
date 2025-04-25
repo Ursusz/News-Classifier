@@ -33,7 +33,7 @@ def predict_rfc(text, title):
 
         y = model.predict(x)
         result = 'FAKE' if y == 0 else 'REAL'
-        print(result)
+        # print(result)
         return result
     except Exception as e:
         print(f"Error: {e}")
