@@ -18,3 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     txtRadio.addEventListener('change', toggleInputs);
     toggleInputs();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const labels = document.querySelectorAll('.radio-box label');
+
+    labels.forEach(label => {
+        label.addEventListener('click', function() {
+            const radioInput = this.previousElementSibling;
+            if (radioInput && radioInput.type === 'radio') {
+                radioInput.checked = true;
+
+                radioInput.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+});

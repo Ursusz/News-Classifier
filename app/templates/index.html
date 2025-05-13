@@ -8,11 +8,7 @@
     <link href="{{ url_for('static', filename='scss/index.css') }}" rel="stylesheet">
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg shadow-sm">
-    <div class="nav-container">
-        <a class="navbar-brand" href="{{ url_for('main.index') }}">News Classiffier</a>
-    </div>
-</nav>
+{% include '/fragments/navbar.html' %}
 <h1 class="text-center fs-1 font-monospace main-text">News Classiffier</h1>
 
 <div class="form-container">
@@ -40,7 +36,7 @@
                     </div>
                 </div>
                 <div class="radio-boxes-container">
-                    <div class="form-check radio-box">
+                    <div class="form-check radio-box text-white radio-box-clickable">
                         <input checked class="form-check-input" id="urlRadio" name="input_type" type="radio"
                                value="url">
                         <label class="form-check-label" for="urlRadio">
@@ -48,7 +44,7 @@
                         </label>
                     </div>
 
-                    <div class="form-check radio-box">
+                    <div class="form-check radio-box text-white">
                         <input class="form-check-input" id="txtRadio" name="input_type" type="radio" value="txt">
                         <label class="form-check-label" for="txtRadio">
                             TEXT

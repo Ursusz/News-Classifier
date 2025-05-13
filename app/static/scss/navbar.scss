@@ -1,0 +1,33 @@
+nav {
+  background-color: #121212;
+  height: 60px;
+  border: 1px solid gray;
+  border-radius: 8px;
+
+  & > * {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #333333;
+    border-radius: 25px;
+    border: 2px solid white;
+
+    .button-right{
+      border: 1px solid;
+      border-radius: 24px;
+    }
+  }
+
+  a.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    color: ghostwhite;
+    font-size: 15px;
+    transition: all ease-in-out 0.4s;
+
+    &:hover {
+      color: lightsteelblue;
+    }
+  }
+} //nav

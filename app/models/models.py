@@ -18,9 +18,7 @@ class News(db.Model):
     news = db.Column(String(2000), nullable=False, primary_key=True)
     domain_name = db.Column(String(63), ForeignKey('DOMAIN_NAME.domain_name'), nullable=False)
     label = db.Column(Integer, nullable=False)
+    user = db.Column(String(50), ForeignKey('USERS.username'), nullable=False)
 
     def __repr__(self):
-        return f"<NEWS(news={self.news})>"
-
-    def get_news_label(self):
-        print(self.news)
+        return f"<News(id={self.news}')>"
