@@ -1,4 +1,4 @@
-# 🕵️ News Classifier - Online Disinformation Detection
+# News Classifier - Online Disinformation Detection
 
 ## About The Project
 
