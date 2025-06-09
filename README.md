@@ -48,7 +48,3 @@
     ```
     The application will be accessible at `http://127.0.0.1:8080/`.
     *(Pre-trained ML models are included in `app/nlps/`.)*
-
-## Contributions
-
-Contributions are welcome! Feel free to open an Issue or a Pull Request.
