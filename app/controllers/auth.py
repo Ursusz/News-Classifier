@@ -1,12 +1,10 @@
 from flask import request, render_template, Blueprint, redirect, url_for, flash, session
-from flask_login import login_user, logout_user, current_user
+from flask_login import login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from utils.classifiers import predict_rfc, predict_bert
 from app.models.user import USERS
 from app.extensions import db
 
 auth_bp = Blueprint('auth', __name__)
-
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     session.pop('_flashes', None)
@@ -27,6 +25,7 @@ def logout():
     session.pop('_flashes', None)
     logout_user()
     return redirect(url_for("main.index"))
+
 
 
 @auth_bp.route("/register", methods=["GET", "POST"])

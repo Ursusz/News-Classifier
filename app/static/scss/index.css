@@ -1,0 +1,96 @@
+.main-text {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  color: white;
+}
+
+.form-container {
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.form-container .form-wrapper {
+  width: 80%;
+  height: 300px;
+  border: 2px solid darkslateblue;
+  border-radius: 20px;
+  box-shadow: 4px 6px 10px rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container .form-wrapper .input-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container .form-wrapper .input-form button {
+  position: absolute;
+  bottom: 20px;
+}
+.form-container .form-wrapper .input-form .content-input {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.form-container .form-wrapper .input-form .content-input .radio-boxes-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+  overflow: auto;
+  justify-content: center;
+  width: 300px;
+}
+.form-container .form-wrapper .input-form .content-input .radio-boxes-container .radio-box {
+  margin: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.form-container .form-wrapper .input-form .content-input .radio-boxes-container .radio-box input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.form-container .form-wrapper .input-form .content-input .radio-boxes-container .radio-box input[type=radio]:checked + label {
+  border-color: white;
+}
+.form-container .form-wrapper .input-form .content-input .radio-boxes-container .radio-box label {
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: -20px;
+}
+.form-container .form-wrapper .input-form .content-input .inputs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form-container .form-wrapper .input-form .content-input .inputs-container > * {
+  width: 90%;
+}
+.form-container .form-wrapper .input-form .content-input .inputs-container .form-select {
+  margin-bottom: 20px;
+  background-color: darkslateblue;
+}
+.form-container .form-wrapper .input-form .content-input .inputs-container .form-select option {
+  background-color: darkslateblue;
+}
+.form-container .form-wrapper .input-form .content-input .inputs-container input {
+  background-color: lightslategrey;
+  color: darkblue;
+  border-color: indigo;
+}
+
+/*# sourceMappingURL=index.css.map */

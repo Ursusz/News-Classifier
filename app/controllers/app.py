@@ -72,11 +72,15 @@ def predict():
         if input_type == 'url':
             url = request.form.get('input_url')
             prediction = verify_url_in_bd(url)
-            prediction = 'FAKE' if prediction == 0 else 'REAL'
+            if prediction == 0:
+                prediction = 'FAKE'
+            elif prediction == 1:
+                prediction = 'REAL'
             if prediction is not None:
                 return render_template('index.html', prediction_result=prediction, used_model='DataBase')
             else:
                 text, title = get_html(url)
+                print('here')
 
                 prediction = ''
                 if model == 'rfc':
