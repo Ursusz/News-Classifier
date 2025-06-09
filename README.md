@@ -23,7 +23,7 @@
 
 1.  **Clone Repository:**
     ```bash
-    git clone [https://github.com/YourUsername/News-Classifier.git](https://github.com/YourUsername/News-Classifier.git)
+    git clone https://github.com/Ursusz/News-Classifier.git
     cd News-Classifier
     ```
 2.  **Create & Activate Virtual Environment:**
